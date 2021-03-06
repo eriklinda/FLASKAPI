@@ -22,11 +22,12 @@ class SizeFinder:
 @app.route('/getsize/', methods=['GET'])
 def respond():
     # Retrieve the name from url parameter
+    storlek = request.args.get("name", None)
     size = request.data
 
     response = {}
-
-    size_id = SizeFinder(size)
+    sizen = SizeFinder(size)
+    sizen.find_size(storlek)
 
     # Check if user sent a name at all
     if not size:
@@ -46,7 +47,7 @@ def post_something():
     param = request.form.get('size')
     print(param)
     # You can add the test cases you made in the previous function, but in our case here you are just testing the POST functionality
-    SizeFinder()
+    SizeF)inder(
 
 # A welcome message to test our server
 @app.route('/')
